@@ -11,6 +11,9 @@ docker compose up -d --build
 
 Open the dashboard at `http://localhost:3000`, API documentation at `http://localhost:8000/docs`, Kafka UI at `http://localhost:8080`, and Airflow at `http://localhost:8081`.
 
+
+<img width="1758" height="1609" alt="Screenshot_25-9-2026_194324_localhost" src="https://github.com/user-attachments/assets/809c339e-549c-439b-9756-73a0f5a66c99" />
+
 ## Architecture
 
 ```mermaid
