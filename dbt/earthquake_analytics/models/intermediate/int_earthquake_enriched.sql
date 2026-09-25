@@ -1,0 +1,1 @@
+select *,date(event_time_utc) event_date,date_part('hour',event_time_utc) event_hour,case when magnitude < 2 then 'under_2' when magnitude < 4 then '2_to_3_9' when magnitude < 6 then '4_to_5_9' else '6_plus' end magnitude_band, magnitude is not null and latitude between -90 and 90 and longitude between -180 and 180 as is_quality_valid from {{ ref('int_earthquake_country') }}

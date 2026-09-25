@@ -1,0 +1,11 @@
+name: earthquake_analytics
+version: '1.0.0'
+config-version: 2
+profile: earthquake_analytics
+model-paths: [models]
+seed-paths: [seeds]
+models:
+  earthquake_analytics:
+    staging: {+schema: staging, +materialized: view}
+    intermediate: {+schema: analytics, +materialized: view}
+    marts: {+schema: analytics, +materialized: table}

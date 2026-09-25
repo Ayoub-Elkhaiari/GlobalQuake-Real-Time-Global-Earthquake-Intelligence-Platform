@@ -1,0 +1,19 @@
+version: 2
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: earthquake_events
+        loaded_at_field: ingested_at
+        freshness: {warn_after: {count: 2, period: hour}, error_after: {count: 8, period: hour}}
+models:
+  - name: stg_earthquake_events
+    columns:
+      - {name: event_id, tests: [not_null, unique]}
+      - {name: event_time_utc, tests: [not_null]}
+      - name: latitude
+        tests: [{dbt_utils.accepted_range: {min_value: -90, max_value: 90}}]
+      - name: longitude
+        tests: [{dbt_utils.accepted_range: {min_value: -180, max_value: 180}}]
+      - name: depth_km
+        tests: [{dbt_utils.accepted_range: {min_value: 0, max_value: 1000}}]

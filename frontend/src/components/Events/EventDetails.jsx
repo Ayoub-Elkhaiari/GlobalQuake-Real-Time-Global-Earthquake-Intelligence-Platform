@@ -1,0 +1,1 @@
+export default function EventDetails({event}){return event&&<section className="panel"><h2>Event details</h2><dl>{Object.entries(event).filter(([,v])=>v!=null).map(([k,v])=><><dt>{k.replaceAll('_',' ')}</dt><dd>{String(v)}</dd></>)}</dl></section>}

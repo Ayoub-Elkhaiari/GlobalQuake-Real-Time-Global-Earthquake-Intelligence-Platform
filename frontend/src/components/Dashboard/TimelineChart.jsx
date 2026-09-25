@@ -1,0 +1,1 @@
+import {LineChart,Line,XAxis,YAxis,Tooltip,ResponsiveContainer}from'recharts';export default function TimelineChart({data}){return <section className="panel chart"><h2>30-day activity</h2><ResponsiveContainer><LineChart data={data}><XAxis dataKey="label" hide/><YAxis/><Tooltip/><Line type="monotone" dataKey="value" stroke="#34d399"/></LineChart></ResponsiveContainer></section>}

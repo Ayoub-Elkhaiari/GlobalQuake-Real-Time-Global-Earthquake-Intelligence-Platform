@@ -1,0 +1,1 @@
+export default function EarthquakePopup({event}){return <div><b>M {event.magnitude ?? '—'} {event.magnitude_type||''}</b><p>{event.place||'Unspecified location'}</p><small>Depth: {event.depth_km??'—'} km<br/>Time: {new Date(event.event_time).toLocaleString()}</small>{event.event_url&&<p><a href={event.event_url} target="_blank">Open USGS event</a></p>}</div>}

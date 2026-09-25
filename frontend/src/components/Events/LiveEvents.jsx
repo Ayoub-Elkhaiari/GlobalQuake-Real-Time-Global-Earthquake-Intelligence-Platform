@@ -1,0 +1,1 @@
+export default function LiveEvents({events}){return <section className="panel live"><h2><i/> Live events</h2>{events.slice(0,8).map(e=><div className="live-row" key={e.event_id}><b>M {e.magnitude??'—'}</b><span>{e.place||'Unspecified location'}</span><time>{new Date(e.event_time).toLocaleTimeString()}</time></div>)}</section>}

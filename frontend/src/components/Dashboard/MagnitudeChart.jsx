@@ -1,0 +1,1 @@
+import {BarChart,Bar,XAxis,YAxis,Tooltip,ResponsiveContainer}from'recharts';export default function MagnitudeChart({data}){return <section className="panel chart"><h2>Magnitude distribution</h2><ResponsiveContainer><BarChart data={data}><XAxis dataKey="label"/><YAxis/><Tooltip/><Bar dataKey="value" fill="#38bdf8"/></BarChart></ResponsiveContainer></section>}

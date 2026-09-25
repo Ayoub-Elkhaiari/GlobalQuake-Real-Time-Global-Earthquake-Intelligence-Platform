@@ -1,0 +1,1 @@
+select country_code,country_name,region,count(*) event_count,max(magnitude) largest_magnitude,avg(magnitude) average_magnitude,max(event_time_utc) last_event,count(*) filter(where tsunami=1) tsunami_events from {{ ref('fct_earthquakes') }} group by 1,2,3
